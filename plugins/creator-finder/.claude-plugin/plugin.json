@@ -1,0 +1,8 @@
+{
+  "name": "creator-finder",
+  "version": "0.4.0",
+  "author": {
+    "name": "Creator Finder"
+  },
+  "description": "Creator Finder workflows for your agent, with a read-only connection diagnostic."
+}

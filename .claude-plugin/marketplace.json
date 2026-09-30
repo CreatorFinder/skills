@@ -1,0 +1,14 @@
+{
+  "name": "creatorfinder",
+  "description": "Creator Finder research workflows and data tools for your own agent.",
+  "owner": {
+    "name": "Creator Finder"
+  },
+  "plugins": [
+    {
+      "name": "creator-finder",
+      "source": "./plugins/creator-finder",
+      "description": "Public skill entrypoints for authenticated Creator Finder playbooks."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "creator-finder",
+  "version": "0.5.0",
+  "description": "Public entrypoints for authenticated Creator Finder research workflows.",
+  "author": {
+    "name": "Creator Finder"
+  },
+  "repository": "https://github.com/CreatorFinder/skills",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Creator Finder",
+        "shortDescription": "Research creators with your own agent.",
+        "longDescription": "Public skill entrypoints for authenticated Creator Finder research playbooks and outreach templates. Connect CF data separately; your own agent executes the workflow.",
+        "developerName": "Creator Finder",
+        "category": "Productivity",
+        "capabilities": [],
+        "defaultPrompt": "Use Creator Finder Get Started to check my existing connection and choose a research workflow."
+      }
+    }
+  }
+}

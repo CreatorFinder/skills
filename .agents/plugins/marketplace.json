@@ -1,0 +1,20 @@
+{
+  "name": "creatorfinder",
+  "interface": {
+    "displayName": "Creator Finder"
+  },
+  "plugins": [
+    {
+      "name": "creator-finder",
+      "source": {
+        "source": "local",
+        "path": "./plugins/creator-finder"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

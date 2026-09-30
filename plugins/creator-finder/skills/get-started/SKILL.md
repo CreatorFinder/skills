@@ -7,6 +7,8 @@ description: Connect Creator Finder's public skill entrypoints to authenticated 
 
 The installed skills are public entrypoints. Detailed CF research instructions, rubrics and outreach templates are retrieved from your authenticated CF connection. Your agent performs the work; CF does not run hosted reasoning through these tools.
 
+Select this skill from your client’s skills menu or ask your agent to use Get Started. Skill invocation syntax varies by client; do not require a Claude-specific slash command in Codex or Work.
+
 1. Read [connection setup](references/connection.md). Inspect your connected CF data MCP tools. Installation does not grant account access. Never collect credentials in chat or write them into plugin files.
 2. If the user wants to check the connection, use `check-creator-finder` for one read-only usage call. Do not acquire creator data as a setup test.
 3. For research, select an entrypoint from [the workflow directory](references/workflows.md), then retrieve the current instructions using `get_creator_playbook` with its slug. `list_creator_playbooks` lists the available research workflows. Read the returned instructions and dependencies before execution. If retrieval is missing or denied, stop the CF workflow and explain the setup gap; do not recreate its private method.

@@ -1,8 +1,12 @@
 # Connection and access
 
-Claude Code's marketplace package contains skills only. Add the Creator Finder data MCP using the API-key connection instructions in your CF workspace Connections page, or use an existing working connection. The authenticated data endpoint is `/mcp/data` on your configured API host. Never copy credentials into chats, skills or repositories. Use the client's secure configuration.
+The repository marketplace package for Codex, local Work and Claude Code contains skills only. Add the Creator Finder data MCP using the API-key connection instructions in your CF workspace Connections page, or use an existing working connection. The authenticated data endpoint is `/mcp/data` on your configured API host. Never copy credentials into chats, skills or repositories. Use the client's secure configuration.
 
 Cowork's ZIP also includes the configured data connector and supports its browser sign-in flow. Sign in, review the application and explicitly approve access. Native Claude Code browser sign-in is separate optional work, not a prerequisite for installing skills or using an existing API-key connection.
+
+For Codex, use a securely configured API-key environment-variable reference for the HTTP MCP connection. The key must be available to the actual runtime; a terminal variable does not automatically reach a separately launched GUI or cloud runtime. Local Work support depends on its runtime mode.
+
+ChatGPT web / cloud Work skills import is preparation only. CF's cloud data connection is currently unavailable because its OAuth service permits Claude's callback only. Importing skills through a workspace administrator does not enable authenticated retrieval. Do not tell cloud users to attempt unsupported sign-in or assume local API-key settings apply there.
 
 Account API access, an enabled data service and a current pilot grant are required. Skill installation grants none of these. `get_creator_playbook` returns authenticated research instructions; `list_outreach_templates` and `get_outreach_template` apply account and template visibility checks. If these tools are missing, the backend may not yet include playbook retrieval. Report setup incomplete; do not substitute the legacy hosted workflow.
 

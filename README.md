@@ -18,7 +18,7 @@ Choose user scope for availability across projects. Reload plugins or start a ne
 In Claude Code, install from the official Creator Finder skills repository:
 
 ```text
-/plugin marketplace add jaybeckham/creatorfinder-plugins
+/plugin marketplace add CreatorFinder/skills
 /plugin install creator-finder@creatorfinder
 ```
 

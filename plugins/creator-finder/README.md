@@ -4,7 +4,7 @@ Includes 16 public skill entrypoints, Get Started and Check Creator Finder. Prop
 
 This skills-only package includes no MCP server configuration. Use your existing CF API/MCP connection, configured separately through your workspace Connections page.
 
-Select Get Started from your client’s skills menu or ask your agent to use it. In Claude Code you can also run /creator-finder:get-started. The installed skills request the current instructions through get_creator_playbook; they do not contain the proprietary methods. Outreach instructions are retrieved through list_outreach_templates and get_outreach_template. Inspect exposed tool schemas and stop if retrieval is unavailable. Do not substitute legacy hosted generation.
+Open a new conversation, select Creator Finder’s Get Started skill from your client’s skills menu, and send **Start**. Installation alone does not launch a conversation; this package has no hooks or persistent onboarding state. In Claude Code you can also run /creator-finder:get-started. The installed skills request the current instructions through get_creator_playbook; they do not contain the proprietary methods. Outreach instructions are retrieved through list_outreach_templates and get_outreach_template. Inspect exposed tool schemas and stop if retrieval is unavailable. Do not substitute legacy hosted generation.
 
 Claude Code browser sign-in is optional future work; existing API-key MCP connections can be used. Never paste credentials in chat, repository files or skill files. Account API access and a current pilot grant are required. Installation does not grant or verify access.
 

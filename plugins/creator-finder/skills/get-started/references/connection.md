@@ -1,5 +1,16 @@
 # Connection and access
 
+## First conversation by client
+
+- **Cowork:** upload the downloaded ZIP through Customize → Plugins, connect Creator Finder and approve access in the browser. Open a new conversation, select Creator Finder's Get Started skill and send **Start**.
+- **Claude Code:** install `creator-finder@creatorfinder` from the CreatorFinder/skills marketplace. Once installation is complete, exit the old session and run `claude "Use Creator Finder's Get Started skill to walk me through setup and my first useful result."` in a terminal. This explicitly starts an interactive conversation with the installed skill; it does not install or authenticate the connector.
+- **Codex / supported local Work:** install the skills, configure the separate CF data connection and open a new conversation. Where @-selection is supported, type **@**, select **Creator Finder**, choose **Get Started**, and send **Start**. If this client exposes a skills menu instead, select Get Started there or ask the agent to use it. Availability depends on the installed client's runtime and plugin support.
+- **ChatGPT web / cloud Work:** importing skills is preparation only; authenticated CF work remains blocked as described below.
+
+Nothing runs simply because the package was installed. If a skill is absent from the selection menu, confirm installation and new-session readiness before diagnosing account access. Describe the missing step, not an invented successful connection.
+
+## Account access
+
 The repository marketplace package for Codex, local Work and Claude Code contains skills only. Add the Creator Finder data MCP using the API-key connection instructions in your CF workspace Connections page, or use an existing working connection. The authenticated data endpoint is `/mcp/data` on your configured API host. Never copy credentials into chats, skills or repositories. Use the client's secure configuration.
 
 Cowork's ZIP also includes the configured data connector and supports its browser sign-in flow. Sign in, review the application and explicitly approve access. Native Claude Code browser sign-in is separate optional work, not a prerequisite for installing skills or using an existing API-key connection.

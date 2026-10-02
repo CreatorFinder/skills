@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "creator-finder",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Public entrypoints for authenticated Creator Finder research workflows.",
   "author": {
     "name": "Creator Finder"
@@ -16,7 +16,7 @@
         "developerName": "Creator Finder",
         "category": "Productivity",
         "capabilities": [],
-        "defaultPrompt": "Use Creator Finder Get Started to check my existing connection and choose a research workflow."
+        "defaultPrompt": "Use Creator Finder Get Started to walk me through setup and my first useful result."
       }
     }
   }

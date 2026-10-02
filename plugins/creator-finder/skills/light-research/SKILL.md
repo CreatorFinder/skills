@@ -7,6 +7,18 @@ description: Quickly qualify a creator before investing in deeper research.
 
 This public entrypoint loads the current Creator Finder playbook for `light-research`. The detailed instructions are available through an authenticated CF connection; they are not bundled here.
 
+## A useful first result
+
+Help the user understand one creator quickly. Honor their stated goal, requested scope and inputs; ask one plain question at a time only for missing essentials, starting with the creator link and decision to make. Only when scope is unspecified, if they say “Start” without detail, offer a sourced creator snapshot as a small first win. Skip or restart the conversation when asked without resetting usage. Explain the relevant criteria and why they serve the user's goal; do not impose universal thresholds.
+
+After authenticated retrieval below, adapt the workflow to available evidence: CF profiles/content; supplied links; available browsing. Optional tools are not universal setup requirements; explain when a narrower result is useful. Remember: a snapshot is not comprehensive diligence. Never invent access, measurements or missing evidence. Deliver a sourced creator snapshot in chat with source links or supplied-file references, applied criteria and uncertainty, then recommend one next step such as investigate the most important gap. Claim an optional file exists only after creating and reading it back. Research, contact verification and sending are separate actions; sending needs an available tool and explicit authorization. Do not assume cross-session memory.
+
+## Before acquiring data
+
+State a finite acquisition plan and stopping point within the user's authorized task; obtain authorization if it does not cover that plan. Inspect actual tool schemas and current `list_data_usage` before paid CF requests. A valid nonnegative integer `maxAttempts` is a pilot limit, with remaining attempts `max(0, maxAttempts - reservedAttempts)` when both are valid nonnegative integers. Only explicit `maxAttempts: null` means no pilot cap; still respect a finite task ceiling and provider limits. Missing or invalid usage means unknown access: halt paid CF acquisition. Allowance is not a price or guaranteed result count.
+
+Save the unique `idempotencyKey` and exact input before each CF data request, and retain the first successful response with receipt/source. Identical replay returns a receipt, not the original data; changed input with that key conflicts. Only `receipt.state: completed` with data supplies new evidence. Failed, pending and unknown attempts remain consumed: stop the affected path instead of retrying with a new key or switching paid tools. Pagination stays within the agreed ceiling. Use supplied evidence where sufficient; it never substitutes for required private playbook access.
+
 ## Run this skill
 
 1. Inspect the connected Creator Finder data MCP tools. Use the exposed namespace for `get_creator_playbook` with `{"slug":"light-research"}`. Use the user's existing CF API/MCP connection; installing this file does not connect an account or grant access.

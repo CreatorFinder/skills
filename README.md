@@ -1,6 +1,6 @@
 # Creator Finder skills marketplace
 
-Public entrypoints for 16 Creator Finder workflows, plus setup and a read-only connection diagnostic. The proprietary research methods and outreach templates are retrieved from CF using your authenticated account. Your agent does the work.
+Public entrypoints for 16 Creator Finder workflows, plus setup, outreach drafting and a read-only connection diagnostic. The proprietary research methods and outreach templates are retrieved from CF using your authenticated account. Your agent does the work.
 
 ## Codex desktop / CLI and local Work
 
@@ -55,6 +55,6 @@ Download the Cowork ZIP from your CF workspace. Upload it through Customize → 
 
 ## How it works
 
-The selected skill calls get_creator_playbook for its instructions. Outreach uses list_outreach_templates and get_outreach_template. The backend checks account access and template visibility; unavailable access stops retrieval. These reads do not run hosted AI, charge data attempts or send messages. Your own agent then applies the instructions with your authorized tools.
+The selected skill calls get_creator_playbook for its instructions. Outreach uses list_outreach_templates and get_outreach_template; the Write Outreach skill picks a template for the user's goal and keeps drafts in chat. The backend checks account access and template visibility; unavailable access stops retrieval. These reads do not run hosted AI, charge data attempts or send messages. Your own agent then applies the instructions with your authorized tools.
 
 API access and a current pilot grant are required. Optional browsing, verification and sending services are separate. Never put credentials or retrieved proprietary instructions into this public repository. Update through your client's plugin manager and start a fresh session afterward.

@@ -8,7 +8,11 @@ metadata:
 
 # Find Creators
 
-This public entrypoint loads the current Creator Finder playbook for `find-creators`. The detailed instructions are available through an authenticated CF connection; they are not bundled here.
+This public entrypoint loads the current Creator Finder playbook for `find-creators`. The detailed instructions are available through an authenticated CF connection; they are not bundled here. That applies to the researched-shortlist path. If the user wants verified offer owners instead, take the next branch first: it needs no playbook retrieval and no provider usage check.
+
+## If the user wants verified offer owners
+
+Inspect the exposed tools first. When the goal is a batch of verified offer owners (people who sell a course, coaching or membership) and `start_offer_owner_setup` is exposed, use that database path instead of a researched shortlist. It needs no private playbook and no pilot grant, so do not call `get_creator_playbook` or `list_data_usage` for it. Steps: `start_offer_owner_setup` (free), then ask the target and quantity (recommend 10, maximum 50), `preview_offer_owner_pull` (free; validates the filters and shows the maximum allowance cost, with unknown inventory and no delivery guarantee), `pull_offer_owners` only on the user's explicit request with a unique snake_case `idempotency_key`, and `get_offer_owner_deliveries` for free history. An identical retry with the same key replays the stored delivery free; never pull again automatically. Call-only owners and role addresses stay excluded unless the user explicitly asks, and included call-only records keep the caveat the tool returns. If those tools are absent or denied, the connection must be removed and reconnected with offer-owner permission approved; do not work around it. This ledger charges delivered people against a separate people allowance. The attempt, receipt and camelCase `idempotencyKey` rules in the sections below are provider-only and never apply to owner pulls. Delivered contacts may be reused with their stated verification time, expiry and evidence; do not invent ownership or consent, send anything, or claim exclusivity.
 
 ## A useful first result
 
@@ -16,13 +20,13 @@ Help the user find potential partners. Honor their stated goal, requested scope 
 
 After authenticated retrieval below, adapt the workflow to available evidence: CF supported platform search/profiles; supplied lists. Optional tools are not universal setup requirements; explain when a narrower result is useful. Remember: coverage and fit need evidence. Never invent access, measurements or missing evidence. Deliver the requested sourced shortlist in chat (default to a small first result only when scope is unspecified) with source links or supplied-file references, applied criteria and uncertainty, then recommend one next step such as research the strongest candidate. Claim an optional file exists only after creating and reading it back. Research, contact verification and sending are separate actions; sending needs an available tool and explicit authorization. Do not assume cross-session memory.
 
-## Before acquiring data
+## Before acquiring provider data (provider path only)
 
 State a finite acquisition plan and stopping point within the user's authorized task; obtain authorization if it does not cover that plan. Inspect actual tool schemas and current `list_data_usage` before paid CF requests. A valid nonnegative integer `maxAttempts` is a pilot limit, with remaining attempts `max(0, maxAttempts - reservedAttempts)` when both are valid nonnegative integers. Only explicit `maxAttempts: null` means no pilot cap; still respect a finite task ceiling and provider limits. Missing or invalid usage means unknown access: halt paid CF acquisition. Allowance is not a price or guaranteed result count.
 
 Save the unique `idempotencyKey` and exact input before each CF data request, and retain the first successful response with receipt/source. Identical replay returns a receipt, not the original data; changed input with that key conflicts. Only `receipt.state: completed` with data supplies new evidence. Failed, pending and unknown attempts remain consumed: stop the affected path instead of retrying with a new key or switching paid tools. Pagination stays within the agreed ceiling. Use supplied evidence where sufficient; it never substitutes for required private playbook access.
 
-## Run this skill
+## Run this skill (provider and research path)
 
 1. Inspect the connected Creator Finder data MCP tools. Use the exposed namespace for `get_creator_playbook` with `{"slug":"find-creators"}`. Use the user's existing CF API/MCP connection; installing this file does not connect an account or grant access.
 2. If the tool is missing or access is denied, explain that the CF connection or account access needs setup. Stop this CF workflow. Do not reconstruct its private instructions or silently substitute the legacy hosted research endpoint. Never ask for passwords, tokens or API keys in chat or save them into this skill.

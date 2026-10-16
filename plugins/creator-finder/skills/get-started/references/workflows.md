@@ -19,6 +19,7 @@ Choose for the user's decision, not a prescribed sequence. These are installed s
 | Assess a potential partnership — `partnership-fit-readiness` | supplied business context; CF profiles/content; available browsing | A fit assessment tied to your criteria; no universal fit score or minimum size. | Prepare a personalized brief. |
 | Prepare relevant outreach — `personalization-brief` | supplied research; CF profiles/content; available browsing | A brief with sourced angles; research does not verify an email or send a message. | Draft outreach using an available authenticated template. |
 | Find contact evidence and check deliverability — `find-verify-email` | supplied contact evidence; available browsing; separate verifier | A sourced address and its actual verification status; finding an address alone does not verify deliverability. | Verify with a connected verifier if available and authorized. |
+| Get verified offer owners to partner with — offer-owner database tools, not a skill | `start_offer_owner_setup`, free category and preview tools, then an explicit `pull_offer_owners` | Named offer owners with evidence and a verified contact, charged only for people delivered; matches may be fewer than requested. | Research the strongest fit with `find-creators`, or draft outreach in your agent. |
 | Understand public advertising — `meta-ads-research` | CF public Meta Ad Library search/details; supplied ads | A sourced public-ad snapshot; visible ads do not reveal conversion or spend. | Research the linked offer. |
 
 ## Compose only what the task needs

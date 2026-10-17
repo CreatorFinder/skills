@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "creator-finder",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Public entrypoints for authenticated Creator Finder research workflows.",
   "author": {
     "name": "Creator Finder"

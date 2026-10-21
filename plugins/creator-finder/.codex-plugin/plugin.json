@@ -1,6 +1,6 @@
 {
   "name": "creator-finder",
-  "version": "0.7.1",
+  "version": "0.7.3",
   "description": "Public entrypoints for authenticated Creator Finder research workflows.",
   "author": {
     "name": "Creator Finder"

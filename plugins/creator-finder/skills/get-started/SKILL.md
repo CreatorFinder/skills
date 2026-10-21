@@ -20,10 +20,10 @@ The server sends current guidance with its results: `next_step`, `record_details
 ## Steps
 
 1. **Check the connection quietly.** First inspect the actual connected tools and choose the supported path (see Connection). On the owner path, call `start_offer_owner_setup` with `{}`; it is free and serves as the connection check. Otherwise use `check-creator-finder` once. If access or tools are missing, say what is ready and the one next step, kindly, and stop there.
-2. **Welcome them** the way `next_step` describes: what Creator Finder can do for them, their allowance in one line, a few example requests to copy, and one question about who they would love to partner with and what they offer. If they already named a goal, skip ahead and use it.
-3. **Preview.** Turn their answer into filters, say back in one sentence what you will look for and why it fits their goal, and suggest 10. Call `preview_offer_owner_pull`, confirm the maximum allowance cost in one line, and note in a short clause that they might get fewer than they ask for. Anything the filters cannot express, say you will check in the returned evidence.
+2. **Welcome them** the way `next_step` describes: what Creator Finder can do for them, their allowance (or explicit unlimited founder access) in one line, a few example requests to copy, and one question about who they would love to partner with and what they offer. If they already named a goal, skip ahead and use it.
+3. **Preview.** Turn their answer into filters, say back in one sentence what you will look for and why it fits their goal, and suggest 10. Call `preview_offer_owner_pull`, confirm the maximum allowance cost for finite accounts, or unlimited access and the safe batch size for founders, and note in a short clause that they might get fewer than they ask for. Anything the filters cannot express, say you will check in the returned evidence.
 4. **Pull on their yes,** with exactly the count and filters they approved.
-5. **Hand over a shortlist:** who each owner is, what they sell, where their audience is, their verified email, and why they fit, using only returned evidence and noting what is unknown. Then the remaining allowance in one line and one suggested next step, such as "Want me to draft a warm intro to your top 3?" Drafts stay in this chat.
+5. **Hand over a shortlist:** who each owner is, what they sell, where their audience is, their verified email, and why they fit, using only returned evidence and noting what is unknown. Then the remaining allowance (or unlimited founder access and actual usage) in one line and one suggested next step, such as "Want me to draft a warm intro to your top 3?" Drafts stay in this chat.
 
 On the research path, welcome them the same way, offer a small first result (a short candidate list, a sourced snapshot of one creator, or a draft grounded in research), and follow the provider rules.
 
@@ -35,7 +35,7 @@ Choose the path from the exposed tools before any playbook retrieval or usage ca
 
 ### Allowance
 
-Setup, account, category, preview and history calls are free. A missing or malformed allowance is unknown, never zero or unlimited. Allowance is not inventory, category counts are unknown rather than zero, and a pull can return fewer owners than requested. Categories combine with OR; other filters combine with AND.
+Setup, account, category, preview and history calls are free. A missing or malformed allowance is unknown, never zero or unlimited. Explicit founder access requires `access=true`, `source=founder`, `usage.unlimited=true`, null period/day limits and remaining values, and null `available_now` and `access_until`. For that account, say "unlimited founder access" and report actual delivered usage when useful; never invent a remaining balance, expiry or purchase requirement. The 50-owner batch and one-active-pull protections still apply. `charged` and `charge_if_fulfilled` track delivered usage without reducing a founder quota or adding a fee. Apply finite allowance instructions below only to finite accounts. Allowance is not inventory, category counts are unknown rather than zero, and a pull can return fewer owners than requested. Categories combine with OR; other filters combine with AND.
 
 ### Pulls
 
@@ -43,7 +43,7 @@ Recommend 10; the maximum is 50. Preview first: it returns no contacts and shows
 
 ### Call-only owners and role inboxes
 
-Both are excluded by default. Set `include_call_only=true` or `include_role_emails=true` only when the user explicitly asks, and tell them it broadens the pool. Repeat this caveat with every included call-only record: “We found only book-a-call or application pages for this owner. We did not find a back-end program; double-check their offer before partnering.”
+Call-only owners are excluded by default: set `include_call_only=true` only when the user explicitly asks, and tell them it broadens the pool. Role inboxes (info@, hello@) are included by default, because at a small business they reach the owner; set `include_role_emails=false` only when the user asks for named addresses only. Repeat this caveat with every included call-only record: “We found only book-a-call or application pages for this owner. We did not find a back-end program; double-check their offer before partnering.”
 
 ### Claims
 
